@@ -82,31 +82,25 @@ header {
   transition: var(--transition);
 }
 
+/* --- Desktop Default --- */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-weight: bold;
-  text-decoration: none;
+  padding: 1rem 1.5rem;
 }
 
 .nav-links {
   display: flex;
-  gap: 1.5rem;
+  gap: 1.2rem;
 }
 
-.theme-toggle-btn {
-  background: none;
-  border: none;
-  font-size: 1.2rem;
-  cursor: pointer;
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  font-size: 1rem;
 }
 
 /* ==========================================
@@ -547,23 +541,22 @@ header {
 /* ==========================================
    8. MOBILE RESPONSIVENESS (@media queries)
    ========================================== */
-@media (max-width: 768px) {
-  /* Hide the nav text links */
+/* --- Mobile View --- */
+@media (max-width: 600px) {
+  /* Hide ONLY the text labels on phone */
+  .nav-text {
+    display: none;
+  }
+
+  /* Keep icons visible and easily tap-able */
+  .nav-icon {
+    font-size: 1.3rem;
+  }
+
   .nav-links {
-    display: none;
-  }
-
-  /* Optional: Hide the text part of logo on phone, keeping only logo image */
-  .logo-text {
-    display: none;
-  }
-
-  /* Ensure navbar spreads logo to left and theme toggle to right */
-  .navbar {
-    padding: 0.8rem 1.2rem;
+    gap: 1rem;
   }
 }
-
 
 /* Faded state during swap */
 #dynamic-text.fade-out {
