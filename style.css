@@ -549,24 +549,27 @@ header {
 /* ==========================================
    8. MOBILE RESPONSIVENESS (@media queries)
    ========================================== */
-@media (max-width: 768px) {
-  .hero-content h1 {
-    font-size: 2.4rem; /* Scaled down for mobile screens */
+@media (max-width: 600px) {
+  /* Prevent header items from wrapping awkwardly */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
   }
 
-  .hero-content h2 {
-    font-size: 1.35rem;
+  /* Scale down or hide extended nav links on mobile to make room for the theme toggle */
+  .nav-links {
+    gap: 10px;
+    font-size: 0.9rem;
   }
 
-  #dynamic-text {
-    font-size: 1.45rem;
-  }
-
-  .hero-bio {
-    font-size: 1.05rem;
+  /* Ensure the theme toggle button stays visible and clickable */
+  .theme-toggle-btn {
+    display: block !important;
+    z-index: 10;
   }
 }
-
 
 
 /* Faded state during swap */
