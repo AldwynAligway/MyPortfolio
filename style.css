@@ -672,3 +672,15 @@ header {
   color: rgba(255, 255, 255, 0.15);
   font-weight: 300;
 } 
+
+
+.brand-title {
+  color: #2563eb; /* Clean modern blue (or use #0070f3 / #007bff) */
+  text-decoration: none; /* Removes the default blue underline from links */
+  font-weight: bold; /* Keeps the logo bold */
+}
+
+/* Optional: Keep it blue when hovered or active */
+.brand-title:hover {
+  color: #1d4ed8; /* Slightly darker blue on hover */
+}
