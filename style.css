@@ -1,0 +1,685 @@
+/*CSS Variable and themes Setup */
+:root{
+    --bg-color: #ffffff;
+    --text-color: #1f2937;
+    --text-muted: #6b7280;
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --card-bg: #f9fafb;
+    --border-color: #e5e7eb;
+    --nav-bg: rgba(255, 255, 255, 0.9);
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --max-width: 1100px;
+    --transition: all 0.3s ease;
+}
+
+body.dark-mode {
+  --bg-color: #000000;         /* True pitch black background */
+  --text-color: #f3f4f6;       /* Clean high-contrast white text */
+  --text-muted: #9ca3af;       /* Soft grey for bio/secondary text */
+  --card-bg: #0a0a0a;         /* Slightly off-black for elevated cards */
+  --border-color: #1f2937;     /* Subtle border to keep card edges visible */
+  --nav-bg: rgba(0, 0, 0, 0.85); /* Dark frosted glass navbar */
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth; /* Enables smooth scrolling when clicking nav links */
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.section {
+  padding: 5rem 1.5rem; /* Top/bottom padding separates sections */
+}
+
+.home-container,
+.projects-container,
+.contact-container,
+.footer-container {
+  max-width: var(--max-width);
+  margin: 0 auto; /* Centers the container horizontally */
+  width: 100%;
+}
+
+h1, h2, h3 {
+  line-height: 1.2;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ==========================================
+   3. NAVIGATION BAR
+   ========================================== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--nav-bg);
+  backdrop-filter: blur(8px); /* Gives a cool frosted-glass effect */
+  border-bottom: 1px solid var(--border-color);
+  z-index: 1000; /* Keeps navbar above all other content */
+  transition: var(--transition);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+}
+
+.logo a {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem; /* Spacing between links */
+}
+
+.nav-links a {
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.nav-links a:hover {
+  color: var(--primary-color);
+}
+
+/* ==========================================
+   4. HOME SECTION
+   ========================================== */
+.home-section {
+  padding-top: 8rem; /* Extra top space so fixed navbar doesn't cover content */
+  min-height: 90vh;  /* Takes up almost full screen height */
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-color);
+  transition: background-color 0.3s ease, color 0.3s ease; /* Enables smooth theme switching */
+}
+
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center; /* Centers all text (h1, h2, p) */
+  padding: 4rem 1rem;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column; /* Stacks image -> name -> bio vertically */
+  align-items: center;    /* Keeps every element centered horizontally */
+  max-width: 650px;       /* Keeps text width comfortable to read */
+  margin: 0 auto;
+}
+
+.profile-img-container {
+  margin-bottom: 1.5rem;
+}
+
+.profile-img {
+  width: 220px;
+  height: 280px;
+  border-radius: 20%; /* Circle shape */
+  object-fit: cover;
+  border: 3px solid rgba(88, 166, 255, 0.4); /* Glow border ring */
+  box-shadow: 0 0 20px rgba(88, 166, 255, 0.2);
+}
+
+/* Hero Typography Styling */
+.hero-content h1 {
+  font-size: 3.25rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+  color: var(--text-color);
+}
+
+/* Ensure name text matches theme colors */
+.highlight {
+  color: var(--text-color); /* Changes automatically with light/dark theme! */
+  transition: color 0.3s ease;
+}
+
+.hero-content h2 {
+  font-size: 1.75rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.hero-bio {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* Animated Role Text */
+#dynamic-text {
+  font-size: 1.85rem; /* Made slightly larger than h2 text for accent emphasis */
+  color: var(--primary-color);
+  font-weight: 700;
+  display: inline-block;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Hero Action Buttons */
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* Reusable Button Styles */
+.home-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: var(--transition);
+}
+
+.primary-btn {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+.primary-btn:hover {
+  background-color: var(--primary-hover);
+}
+
+.secondary-btn {
+  background-color: transparent;
+  border-color: var(--border-color);
+  color: var(--text-color);
+}
+
+.secondary-btn:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+/* ==========================================
+   5. PROJECTS SECTION
+   ========================================== */
+.section-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+
+
+/* Projects Section Layout */
+.projects-grid {
+  display: flex; /* Arranges cards in a single horizontal row */
+  gap: 1.5rem;
+  overflow-x: auto; /* Enables horizontal scrolling */
+  padding: 1rem 0.5rem 2rem 0.5rem; /* Extra bottom padding for shadow visibility */
+  scroll-snap-type: x mandatory; /* Makes scroll snap smoothly to each card */
+  -webkit-overflow-scrolling: touch; /* Smooth momentum scroll on mobile */
+}
+
+/* Optional Custom Scrollbar Styling */
+.projects-grid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.projects-grid::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+.projects-grid::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+.projects-grid::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.5);
+}
+
+/* Individual Card Frame */
+.project-card {
+  flex: 0 0 300px; /* Fixed card width of 300px (adjust this number if you want wider/narrower) */
+  scroll-snap-align: start; /* Snaps card into view while scrolling */
+  background: #161b22;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              border-color 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* 1. FIX THE MESSED UP / OVERFLOWING TITLE */
+.project-card h3 {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+/* 2. FIX IMAGE & "NO PREVIEW" PLACEHOLDER HEIGHTS */
+.project-card img,
+.project-card .no-preview,
+.project-card .project-image-container {
+  width: 100%;
+  height: 180px; /* Forces all cards to have the exact same image section height */
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* 3. ENSURE BUTTONS AT THE BOTTOM ALIGN EVENLY */
+.project-card .project-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.project-card .project-links {
+  margin-top: auto; /* Pushes the buttons to the very bottom of the card */
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(99, 102, 241, 0.4); /* Subtle purple/indigo accent */
+  box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.5), 
+              0 0 15px rgba(99, 102, 241, 0.15);
+}
+
+/* Image Container with Subtle Gradient Overlay */
+.project-image-container {
+  width: 100%;
+  height: 180px; /* Reduced from 220px to match smaller card width */
+  position: relative;
+  overflow: hidden;
+  background: #0d1117;
+}
+.project-image-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 60%, rgba(22, 27, 34, 0.9) 100%);
+  pointer-events: none;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.06);
+}
+
+.project-image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6e7681;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+/* Content Container */
+.project-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.project-content h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #f0f6fc;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.3px;
+}
+
+.project-content p {
+  color: #8b949e;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+/* Tech Badges */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tech-stack span {
+  background: rgba(110, 118, 129, 0.12);
+  color: #58a6ff;
+  border: 1px solid rgba(88, 166, 255, 0.2);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: 12px;
+  letter-spacing: 0.2px;
+}
+
+/* Action Links */
+.project-links {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.project-links a {
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.project-links a[href*="github"] {
+  background: #21262d;
+  color: #c9d1d9;
+  border: 1px solid rgba(240, 246, 252, 0.1);
+}
+
+.project-links a[href*="github"]:hover {
+  background: #30363d;
+  color: #ffffff;
+}
+
+.project-links a:not([href*="github"]) {
+  background: #238636;
+  color: #ffffff;
+}
+
+.project-links a:not([href*="github"]):hover {
+  background: #2ea043;
+}
+
+/* Card Buttons */
+.project-links {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.card-btn {
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  text-align: center;
+  flex: 1;
+}
+
+.secondary-card-btn {
+  background-color: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+.secondary-card-btn:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+/* ==========================================
+   6. CONTACT SECTION & FORM
+   ========================================== */
+.contact-subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+/* Highlight border when typing in an input field */
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.submit-btn {
+  width: 100%;
+}
+
+/* ==========================================
+   7. FOOTER
+   ========================================== */
+.footer {
+  border-top: 1px solid var(--border-color);
+  padding: 2rem 1.5rem;
+  margin-top: 3rem;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.social-links a:hover {
+  color: var(--primary-color);
+}
+
+/* ==========================================
+   8. MOBILE RESPONSIVENESS (@media queries)
+   ========================================== */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.4rem; /* Scaled down for mobile screens */
+  }
+
+  .hero-content h2 {
+    font-size: 1.35rem;
+  }
+
+  #dynamic-text {
+    font-size: 1.45rem;
+  }
+
+  .hero-bio {
+    font-size: 1.05rem;
+  }
+}
+
+
+
+/* Faded state during swap */
+#dynamic-text.fade-out {
+  opacity: 0;
+  transform: translateY(-8px); /* Optional subtle float-up effect */
+}
+
+/* ==========================================
+   SKILLS SECTION
+   ========================================== */
+.skills-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.skill-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 1.75rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-color);
+}
+
+.skill-card h3 {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+.skill-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.skill-list li {
+  font-size: 0.95rem;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+}
+
+.skill-list li::before {
+  content: "▹";
+  color: var(--primary-color);
+  margin-right: 0.5rem;
+  font-weight: bold;
+}
+
+/* Grid Background Container */
+.home-section {
+  background-color: var(--bg-color); /* Dynamically switches with theme! */
+  background-image: 
+    linear-gradient(rgba(128, 128, 128, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(128, 128, 128, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Status Bar Container */
+.tech-status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  font-family: 'Courier New', Courier, monospace; /* Monospace tech font */
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.status-item svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 2px;
+}
+
+/* Color Accents */
+.status-item.blue { color: #3b82f6; }
+.status-item.blue span { color: #93c5fd; }
+
+.status-item.green { color: #22c55e; }
+.status-item.green span { color: #86efac; }
+
+.status-item.amber { color: #f59e0b; }
+.status-item.amber span { color: #fde68a; }
+
+.divider {
+  color: rgba(255, 255, 255, 0.15);
+  font-weight: 300;
+} 

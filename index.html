@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev_Studio</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#home">Dev_Studio</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href = "#home">Home</a></li>
+                <li><a href = "#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href = "#contact">Contact</a></li>
+                
+            </ul>
+            <button id="theme-toggle" class="btn secondary-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">🌙 Theme</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="section home-section">
+            <div class="home-container">
+                
+                <div class="hero-content">
+                
+                <div class="profile-img-container">
+                    
+                    <img src="images/profile.png" alt="Profile Picture" class="profile-img">
+                </div>
+
+                <h1><span class="highlight">Aldwyn Aligway</span></h1>
+
+                <h2><span id="dynamic-text">Computer Engineer</span></h2>
+
+                <p class="hero-bio">
+                    Passionate about building hardware-software integrations, robotics systems, and modern web applications.
+                </p>
+
+                
+                <div class="tech-status-bar">
+                <div class="status-item blue">
+                    <i data-lucide="map-pin"></i>
+                    <span>LOC: CEBU_PH</span>
+                </div>
+                
+                <span class="divider">|</span>
+                
+                <div class="status-item green">
+                    <i data-lucide="activity"></i>
+                    <span>STATUS: OPEN_FOR_HIRE</span>
+                </div>
+                
+                <span class="divider">|</span>
+                
+                <div class="status-item amber">
+                    <i data-lucide="cpu"></i>
+                    <span>YEAR: 2026</span>
+                </div>
+                </div>
+
+
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn primary-btn">View Projects</a>
+                    <a href="#contact" class="btn secondary-btn">Get In Touch</a>
+                </div>
+
+                </div>
+            </div>
+            </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section projects-section">
+            <div class="projects-container">
+                <h2 class="section-title">My Projects</h2>
+                
+               
+                <div id="projects-grid" class="projects-grid">
+                <p class="loading-text">Loading projects...</p>
+                </div>
+            </div>
+        </section>
+    <!-- ==========================================
+     SKILLS SECTION
+     ========================================== -->
+        <section id="skills" class="section skills-section">
+        <div class="skills-container">
+            <h2 class="section-title">Skills & Technologies</h2>
+
+            <div class="skills-grid">
+            
+            <!-- Category 1 -->
+            <div class="skill-card">
+                <h3>Web Development</h3>
+                <ul class="skill-list">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Tailwind CSS</li>
+                <li>Sanity CMS</li>
+                <li>Next.js</li>
+                <li>Vercel</li>
+                </ul>
+            </div>
+
+            <!-- Category 2 -->
+            <div class="skill-card">
+                <h3>Engineering & Hardware</h3>
+                <ul class="skill-list">
+                <li>Microcontrollers & DIY Robotics</li>
+                <li>Digital Logic Design</li>
+                <li>Embedded Systems</li>
+                <li>Hardware Troubleshooting</li>
+                </ul>
+            </div>
+
+            <!-- Category 3 -->
+            <div class="skill-card">
+                <h3>Languages & Tools</h3>
+                <ul class="skill-list">
+                <li>C / C++</li>
+                <li>Python</li>
+                <li>SQL</li>
+                <li>Xampp</li>
+                </ul>
+            </div>
+
+            </div>
+        </div>
+        </section>
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section">
+            <div class="contact-container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="contact-subtitle">Have a project in mind or want to connect? Send me a message!</p>
+
+            <form id="contact-form" class="contact-form">
+                <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </div>
+
+                <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your Email Address" required>
+                </div>
+
+                <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Your Message..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn primary-btn submit-btn">Send Message</button>
+            </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+        <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2026 AldwynAligway. All rights reserved.</p>
+            <div class="social-links">
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+        </div>
+        </footer>
+    <script src = "script.js"></script>
+</body>
+</html>
