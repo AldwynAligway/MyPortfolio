@@ -9,19 +9,26 @@
 </head>
 <body>
     <header>
-        <nav class="navbar">
-            <div class="logo">
-                <a href="#home">Dev_Studio</a>
-            </div>
-            <ul class="nav-links">
-                <li><a href = "#home">Home</a></li>
-                <li><a href = "#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href = "#contact">Contact</a></li>
-                
-            </ul>
-            <button id="theme-toggle" class="btn secondary-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">🌙 Theme</button>
-        </nav>
+        <header class="navbar">
+            <!-- Logo Section -->
+            <a href="#" class="logo">
+                <img src="logo.png" alt="Dev_Studio Logo" class="logo-img" />
+                <span class="logo-text">Dev_Studio</span>
+            </a>
+
+            <!-- Navigation Links (Hidden on Phone) -->
+            <nav class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <!-- Theme Toggle Button (Always Visible) -->
+            <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+                🌙
+            </button>
+            </header>
     </header>
 
     <main>

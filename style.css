@@ -86,29 +86,27 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 1rem 1.5rem;
+  padding: 1rem 2rem;
 }
 
-.logo a {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--primary-color);
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .nav-links {
   display: flex;
-  gap: 2rem; /* Spacing between links */
+  gap: 1.5rem;
 }
 
-.nav-links a {
-  font-weight: 500;
-  transition: var(--transition);
-}
-
-.nav-links a:hover {
-  color: var(--primary-color);
+.theme-toggle-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
 }
 
 /* ==========================================
@@ -549,25 +547,20 @@ header {
 /* ==========================================
    8. MOBILE RESPONSIVENESS (@media queries)
    ========================================== */
-@media (max-width: 600px) {
-  /* Prevent header items from wrapping awkwardly */
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 15px;
-  }
-
-  /* Scale down or hide extended nav links on mobile to make room for the theme toggle */
+@media (max-width: 768px) {
+  /* Hide the nav text links */
   .nav-links {
-    gap: 10px;
-    font-size: 0.9rem;
+    display: none;
   }
 
-  /* Ensure the theme toggle button stays visible and clickable */
-  .theme-toggle-btn {
-    display: block !important;
-    z-index: 10;
+  /* Optional: Hide the text part of logo on phone, keeping only logo image */
+  .logo-text {
+    display: none;
+  }
+
+  /* Ensure navbar spreads logo to left and theme toggle to right */
+  .navbar {
+    padding: 0.8rem 1.2rem;
   }
 }
 
